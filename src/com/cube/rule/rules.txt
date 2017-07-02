@@ -1,0 +1,25 @@
+Rule:1
+ {
+"action":"PushNotifiction"
+"conditions":{
+	"expression1":{
+		"LHS":"event.noun"
+		"operator":"="
+		"RHS":"bill"
+		}
+	"expOperator":"AND"
+	"expression2":{
+		"LHS":"event.verb"
+		"operator":"="
+		"RHS":"pay"
+		}
+	}
+"Having":{
+	"expression":{
+		"LHS":"COUNT(event)"
+		"operator":"="
+		"RHS":"1"
+		}
+	}
+}
+

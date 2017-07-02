@@ -1,0 +1,79 @@
+ActionDefinition1:
+{
+"executeAfter":"5"
+"activity":"alertUser"
+"conditions":{
+	"expression1":{
+		"LHS":"event.noun"
+		"operator":"="
+		"RHS":"bill"
+		}
+	"expOperator":"AND"
+	"expression2":{
+		"LHS":"event.verb"
+		"operator":"="
+		"RHS":"pay"
+		}
+	"expOperator":"AND"
+	"expression3":{
+		"LHS":"properties.lhs"
+		"operator":"="
+		"RHS":"value"
+		}
+	"expOperator":"AND"
+	"expression4":{
+		"LHS":"event.userid"
+		"operator":">="
+		"RHS":":TriggeringUserId"
+		}
+	"expOperator":"AND"
+	"expression5":{
+		"LHS":"event.creationTime"
+		"operator":">="
+		"RHS":":CreationTime"
+		}
+	"expOperator":"AND"
+	"expression5":{
+		"LHS":"properties.eventId"
+		"operator":">="
+		"RHS":"event.id"
+		}
+	}
+"HAVING":{
+	"expression6":{
+		"LHS":"SUM(properties.rhs)"
+		"operator":">="
+		"RHS":"20000"
+		}
+	}
+}
+
+
+
+
+
+ActionDefinition2:
+
+{
+"executeAfter":"15"
+"activity":"alert cube operator"
+"conditions":{
+	"expression1":{
+		"LHS":"event.noun"
+		"operator":"!="
+		"RHS":"fdbk"
+		}
+	"expOperator":"AND"
+	"expression2":{
+		"LHS":"event.id"
+		"operator":"="
+		"RHS":":TriggeringEventId"
+		}
+	"expOperator":"AND"
+	"expression3":{
+		"LHS":"event.userid"
+		"operator":"="
+		"RHS":":TriggeringUserId"
+		}
+	}
+}
